@@ -1,0 +1,18 @@
+<% title @post.title %>
+
+<%= render partial: 'post', locals: {post: @post} %>
+<p><%= @post.content %></p>
+<p><%= link_to 'Edit', edit_post_path(@post) %> | <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Do you want to delete it?'} %></p>
+
+
+<p><%= link_to 'View All Posts', posts_path %></p>
+
+
+<h2>Comments</h2>
+
+<p>
+<%= render @post.comments %>
+</p>
+
+<%= link_to 'Put a Comment', new_post_comment_path(@post) %>
+

@@ -1,0 +1,16 @@
+<% title 'Welcome' %>
+
+<div>
+
+
+	<% if current_user %>
+		
+		<%= redirect_to "http://www.rubyonrails.org" %>
+					
+	<% else %>
+		<p>Welcome to visit my website. To get in, please log in</p>
+	<% end %>
+
+
+
+</div>
