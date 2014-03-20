@@ -1,10 +1,10 @@
 <%= div_for comment do %>
 
-
-	<p><%= comment.body %></p>
-	<p>
+	<div class="row">
+	<%= comment.body %>
 		<%= link_to 'Edit', edit_post_comment_path(@post,comment) %> |
 		<%= link_to 'Delete', post_comment_path(@post, comment), method: :delete, confirm: 'Do you want to delete?' %>
-	</p>
+	</div>
+
 <% end %>
 

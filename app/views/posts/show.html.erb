@@ -1,18 +1,40 @@
 <% title @post.title %>
 
-<%= render partial: 'post', locals: {post: @post} %>
-<p><%= @post.content %></p>
-<p><%= link_to 'Edit', edit_post_path(@post) %> | <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Do you want to delete it?'} %></p>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="highlight">
+				<%= render partial: 'post', locals: {post: @post} %>
+				<pre>
+					<p><%= @post.content %></p>
+				</pre>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="btn-group btn-group-justified">
+				<div class="btn-group">
+					<%= link_to 'Edit', edit_post_path(@post), class: "btn btn-primary" %>
+				</div>
+ 				<div class="btn-group">
+ 					<%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Do you want to delete it?'}, class: "btn btn-success" %>
+ 				</div>
+				<div class="btn-group">
+					<%= link_to 'View All Posts', posts_path, class: "btn btn-info" %>
+				</div>
+			</div>
+		</div>	
+	</div>
+	-------------------------------------- <!-- how can I use a style only for this page? -->
+	<div class="row">
+		<div class="col-md-3">
+			<%= link_to 'Make a Comment', new_post_comment_path(@post), class: "btn btn-success" %>
+		</div>
+	</div>
+<div class="container">
 
-
-<p><%= link_to 'View All Posts', posts_path %></p>
-
-
-<h2>Comments</h2>
-
-<p>
 <%= render @post.comments %>
-</p>
+</div>
 
-<%= link_to 'Put a Comment', new_post_comment_path(@post) %>
-
+</div>

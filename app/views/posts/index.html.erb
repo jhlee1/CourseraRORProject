@@ -1,15 +1,28 @@
 <% title 'Posts' %>
 
-<table>
+
+
+<table class="table table-striped table-bordered">
 <tr>
 	<th>Number</th>
 	<th>Title</th>
 	<th>Written By</th>
 	<th>Date</th>
 </tr>
-<%= render @posts %>
+<% @posts.each do |p| %>
+<tr>
+<td>
+<%= p.id %>
+</td>
+<td>
+<%= render p %>
+</td>
+<td>Author</td>
+<td><%= p.created_at - (10*3600) %></td>
+</tr>
+<% end %>
 </table>
 
-<div id="new_post_link">
-	<td><%= link_to 'Make a new post', new_post_path %>
-</div>
+<button type="button" class="btn btn-primary">
+	<%= link_to 'New post', new_post_path %>
+</button>

@@ -1,3 +1,8 @@
 <% title 'New Post' %>
+<div class="form">
 <%= render 'form' %>
-<p><%= link_to 'Back', posts_path %></p>
+
+<div class="col-md-1">
+<%= link_to 'Back', posts_path, class: 'btn btn-lg btn-primary btn-block' %>
+</div>
+</div>

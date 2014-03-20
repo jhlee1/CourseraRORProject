@@ -1,11 +1,25 @@
 <%= form_for @post do |f| %>
+<div class="container">
 	<%= f.error_messages error_message: "Error is found" %>
-	<%= f.label :title %>
-	<%= f.text_field :title %><br>
+<div class="row">
+<div class="col-md-7">
+	<%= f.label :title %>	<%= f.text_field :title, class: 'form-control col-md-3'%>
+</div>
+</div>
+<div class="row">
+<div class="col-md-7">
 	<%= f.label :content %>
-	<%= f.text_field :content %> <br>
-<!--	<%= f.label :date %>
+	<%= f.text_area :content, class: 'form-control rows-3', rows:"5" %>
+</div>
+</div>
+	<!-- <%= f.label :date %>
 	<%= f.datetime_select :date %> <br> -->
+<br/>
+<div class="row">
+<div class="col-xs-1">
 
-	<%= f.submit %>
+	<%= f.submit "Post it", class: 'btn btn-lg btn-primary btn-block' %>
+</div>
+
+
 <% end %>

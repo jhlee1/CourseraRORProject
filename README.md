@@ -1,1 +1,1 @@
-Before testing
+Need to add association between user and post. Add post number, author, and date on the post.

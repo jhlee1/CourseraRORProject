@@ -7,22 +7,40 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="collapse navbar-collapse" id="navbar-collapse1">
 
-<div id="Login_signup">
-			<ul>
+			<ul class="nav navbar-nav">
+				<%= nav_link 'Welcome', welcome_path %>
 				<% if current_user %>
-					<%= link_to 'Sign Out', sign_out_path %>
-				<% else %>
-					<%= link_to 'Register', sign_up_path %>
-					<%= link_to 'Sign In', sign_in_path %>
+					<%= nav_link 'Posts', posts_path %>
 				<% end %>
 			</ul>
-</div>
-<header>
-	<h1>Group</h1>
+
+			<ul class="nav navbar-nav pull-right">
+				<% if current_user %>
+					<%= nav_link 'Sign Out', sign_out_path %>
+				<% else %>
+					<%= nav_link 'Register', sign_up_path %>
+					<%= nav_link 'Sign In', sign_in_path %>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div class="container-fluid">
+<header class="page-header">
+	<h1 class="blog-title">Group</h1>
 </header>
-<div id="main-content">
 <%= yield %>
+
+<div id="footer"> 
+	<div class="container">
+		<p class="text-muted"> &copy Joohan Lee </p>
+	</div>
+</div>
 </div>
 </body>
 </html>

@@ -15,6 +15,7 @@ Project::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'site#welcome'
+   get 'welcome' => 'site#welcome'
    get 'sign_up' => 'users#new'
    get 'sign_in' => 'sessions#new'
    get 'sign_out' => 'sessions#destroy'

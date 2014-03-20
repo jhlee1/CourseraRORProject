@@ -1,32 +1,15 @@
 <% title 'Sign Up' %>
 
 <%= form_for @user do |f| %>
-	<%= f.error_messages error_message: "Error is found" %>
-	<table>
-	<tr>
-		<td>
-			Name: <%= f.text_field :name %><br/>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			Email: <%= f.text_field :email %><br/>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			Password: <%= f.password_field :password %><br/>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			Confirm password: <%= f.password_field :password_confirmation, label: 'Confirm Password' %><br/>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<%= f.submit 'Save' %>
-		</td>
-	</tr>
-
+<div class="container">
+	<form class="form-signin" role="form">
+		<h2 class="form-signin-heading">Please sign up</h2>
+		<%= f.error_messages error_message: "Error is found" %>
+ 			Name: <%= f.text_field :name, class:"form-control" %>
+			Email: <%= f.text_field :email,class:"form-control" %>
+			Password: <%= f.password_field :password,class:"form-control" %>
+			Confirm password: <%= f.password_field :password_confirmation, label: 'Confirm Password',class:"form-control" %><br/>
+			<%= f.submit 'Sign up', class: 'btn btn-lg btn-primary btn-block' %>
+	</form>
+</div>
 <% end %>
