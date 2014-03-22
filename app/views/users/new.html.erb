@@ -4,12 +4,14 @@
 <div class="container">
 	<form class="form-signin" role="form">
 		<h2 class="form-signin-heading">Please sign up</h2>
-		<%= f.error_messages error_message: "Error is found" %>
+		<div class="col-md-4">
+		<%= f.error_messages error_message: "You are not registered" %>
  			Name: <%= f.text_field :name, class:"form-control" %>
 			Email: <%= f.text_field :email,class:"form-control" %>
 			Password: <%= f.password_field :password,class:"form-control" %>
 			Confirm password: <%= f.password_field :password_confirmation, label: 'Confirm Password',class:"form-control" %><br/>
 			<%= f.submit 'Sign up', class: 'btn btn-lg btn-primary btn-block' %>
+		</div>
 	</form>
 </div>
 <% end %>

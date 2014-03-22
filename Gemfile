@@ -46,3 +46,21 @@ end
 
 gem 'bootstrap-sass', '~>3.1.0'
 gem 'bootstrap_form'
+
+group :development, :test do
+	gem 'guard-rspec'
+	gem 'guard-livereload'
+	gem 'spork-rails'
+	gem 'guard-spork'
+	gem 'childprocess'
+end
+
+gem 'letter_opener', group: :development
+
+group :test do
+	gem 'rspec-rails'
+	gem 'selenium-webdriver'
+	gem 'capybara'
+	gem 'factory_girl_rails'
+	gem 'database_cleaner'
+end

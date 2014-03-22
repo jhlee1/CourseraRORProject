@@ -4,6 +4,7 @@
 <div class="container">
       <form class="form-signin" role="form">
         <h2 class="form-signin-heading">Please sign in</h2>
+        <div class="col-md-4">
 		<%= label_tag :email, "Email" %>
 			<%= text_field_tag :email, params[:email], class: "form-control" %>
 		<%= label_tag :password, "Password" %>
@@ -11,6 +12,7 @@
 			<br/>
 			<%= submit_tag "Sign In", class: 'btn btn-lg btn-primary btn-block' %>
 			<p class="help-block">If you don't have an account, here <%= link_to 'Sign Up', sign_up_path %></p>
+		</div>
 		</form>
 	</div>
 <% end %>
