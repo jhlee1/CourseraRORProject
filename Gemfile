@@ -67,5 +67,6 @@ group :test do
 	gem 'database_cleaner'
 end
 
+gem 'unicorn'
 
 gem 'rails_12factor', group: :production
